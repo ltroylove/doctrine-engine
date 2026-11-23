@@ -1,0 +1,7 @@
+{
+  "verdict": "fail",
+  "must_fail": ["wu-pc03-serializer"],
+  "class": "rival",
+  "note": "context/contracts.md pins toCsv in src/export.ts as the owned CSV serializer (consumed unchanged). This unit mints a rival generic serializer, reimplements its quoting and amount rendering, and reroutes the CLI away from the contract.",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}

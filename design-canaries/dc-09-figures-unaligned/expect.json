@@ -1,0 +1,15 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "figures-unaligned",
+    "figures-not-aligned",
+    "not-aligned",
+    "unaligned",
+    "alignment",
+    "tabular",
+    "do not line up",
+    "not line up"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "Amounts lose their right alignment and tabular figures, so a column of money no longer reads as a column."
+}

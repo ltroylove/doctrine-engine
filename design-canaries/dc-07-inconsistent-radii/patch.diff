@@ -1,0 +1,13 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..f9a4c70 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -76,7 +76,7 @@ body {
+   border-collapse: collapse;
+   background: var(--color-surface);
+   border: var(--line) solid var(--color-border);
+-  border-radius: var(--radius-card);
++  border-radius: var(--radius-control);
+   overflow: hidden;
+ }
+ 

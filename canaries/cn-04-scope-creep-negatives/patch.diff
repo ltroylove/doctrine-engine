@@ -1,0 +1,32 @@
+diff --git a/src/cli.ts b/src/cli.ts
+index 3a146c0..b18cf89 100644
+--- a/src/cli.ts
++++ b/src/cli.ts
+@@ -6,7 +6,6 @@ const STORE = process.env["LEDGER_PATH"] ?? "ledger.jsonl";
+ 
+ export function cmdAdd(args: string[]): string {
+   const [date, category, amountRaw, ...noteParts] = args;
+-  console.debug("add args:", args);
+   const entry = parseEntry({
+     date,
+     category,
+@@ -27,7 +26,6 @@ export function cmdList(): string {
+ export function cmdSum(args: string[]): string {
+   const category = args[0];
+   const entries = loadEntries(STORE);
+-  console.debug("sum over", entries.length, "entries");
+   if (category !== undefined) {
+     const total = sumEntries(entries, { category });
+     return `${category}: $${total.toFixed(2)}`;
+diff --git a/src/sum.ts b/src/sum.ts
+index 50e3897..29b625f 100644
+--- a/src/sum.ts
++++ b/src/sum.ts
+@@ -8,6 +8,7 @@ export interface SumFilter {
+ export function sumEntries(entries: Entry[], filter: SumFilter = {}): number {
+   let total = 0;
+   for (const e of entries) {
++    if (e.amount < 0) continue;
+     if (filter.category !== undefined && e.category !== filter.category) continue;
+     total += e.amount;
+   }

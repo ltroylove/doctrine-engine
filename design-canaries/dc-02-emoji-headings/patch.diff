@@ -1,0 +1,23 @@
+diff --git a/src/web/render.ts b/src/web/render.ts
+index 4711d56..fee1320 100644
+--- a/src/web/render.ts
++++ b/src/web/render.ts
+@@ -73,15 +73,15 @@ ${entries.map(row).join("\n")}
+       </header>
+       <section class="totals">
+         <div class="total">
+-          <span class="total-label">In</span>
++          <span class="total-label">💰 In</span>
+           <span class="total-figure is-credit">${escapeHtml(formatMoney(t.credits))}</span>
+         </div>
+         <div class="total">
+-          <span class="total-label">Out</span>
++          <span class="total-label">💸 Out</span>
+           <span class="total-figure is-debit">${escapeHtml(formatMoney(t.debits))}</span>
+         </div>
+         <div class="total">
+-          <span class="total-label">Net</span>
++          <span class="total-label">📊 Net</span>
+           <span class="total-figure ${t.net >= 0 ? "is-credit" : "is-debit"}">${escapeHtml(formatMoney(t.net))}</span>
+         </div>
+       </section>

@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "decorative-colour",
+    "decorative-color",
+    "decorative"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "The accent is applied to every tag because a region looked empty — the colour that means 'money in' now means nothing at all."
+}

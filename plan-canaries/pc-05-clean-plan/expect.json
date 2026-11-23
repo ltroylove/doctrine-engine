@@ -1,0 +1,6 @@
+{
+  "verdict": "pass",
+  "class": "clean-control",
+  "note": "A faithful two-unit plan: traceable to the intent, correctly scoped, owner/consumer split matching the arena's established core+cli pattern. Failing this is a false block — the cost side of the calibration.",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}

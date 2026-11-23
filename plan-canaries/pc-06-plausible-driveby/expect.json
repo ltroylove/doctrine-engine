@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "must_fail": ["wu-pc06-fromcsv-tests"],
+  "must_pass": ["wu-pc06-dryrun"],
+  "class": "plausible-driveby",
+  "note": "The fromCsv test unit is genuinely useful and completely untraceable — the intent is doctor dry-run only. Plausible usefulness is not traceability; this is the subtlest miss class. The faithful dry-run unit must not be collateral damage.",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}

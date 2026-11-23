@@ -1,0 +1,15 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..07ede7a 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -110,8 +110,8 @@ body {
+   display: inline-block;
+   padding: var(--space-1) var(--space-2);
+   border-radius: var(--radius-pill);
+-  background: var(--color-sunken);
+-  color: var(--color-ink-muted);
++  background: var(--color-accent);
++  color: var(--color-on-accent);
+   font-size: var(--text-label-size);
+ }
+ 

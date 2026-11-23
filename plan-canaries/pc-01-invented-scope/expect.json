@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "must_fail": ["wu-pc01-encrypt"],
+  "must_pass": ["wu-pc01-categories"],
+  "class": "invented-scope",
+  "note": "The intent is a categories directory only; export encryption is whole-cloth invention dressed in a plausible justification. The faithful categories unit must NOT be collateral damage. (v2 2026-08-24: the original faithful unit added --note support, which the arena already had end-to-end — the plan-judge correctly failed it against the real tree. Fixture re-authored against verified-absent capability; the judge audited its own calibrator.)",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}

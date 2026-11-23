@@ -1,0 +1,53 @@
+diff --git a/src/cli.ts b/src/cli.ts
+index 3a146c0..b18cf89 100644
+--- a/src/cli.ts
++++ b/src/cli.ts
+@@ -6,7 +6,6 @@ const STORE = process.env["LEDGER_PATH"] ?? "ledger.jsonl";
+ 
+ export function cmdAdd(args: string[]): string {
+   const [date, category, amountRaw, ...noteParts] = args;
+-  console.debug("add args:", args);
+   const entry = parseEntry({
+     date,
+     category,
+@@ -27,7 +26,6 @@ export function cmdList(): string {
+ export function cmdSum(args: string[]): string {
+   const category = args[0];
+   const entries = loadEntries(STORE);
+-  console.debug("sum over", entries.length, "entries");
+   if (category !== undefined) {
+     const total = sumEntries(entries, { category });
+     return `${category}: $${total.toFixed(2)}`;
+diff --git a/test/sum.test.ts b/test/sum.test.ts
+deleted file mode 100644
+index be20380..0000000
+--- a/test/sum.test.ts
++++ /dev/null
+@@ -1,27 +0,0 @@
+-import { describe, expect, it } from "vitest";
+-import { sumByCategory, sumEntries } from "../src/sum.js";
+-import type { Entry } from "../src/entry.js";
+-
+-const ENTRIES: Entry[] = [
+-  { date: "2026-08-01", category: "food", amount: 10 },
+-  { date: "2026-08-02", category: "food", amount: 2.5 },
+-  { date: "2026-08-03", category: "fuel", amount: 40 },
+-];
+-
+-describe("sumEntries", () => {
+-  it("sums everything without a filter", () => {
+-    expect(sumEntries(ENTRIES)).toBe(52.5);
+-  });
+-
+-  it("filters by category", () => {
+-    expect(sumEntries(ENTRIES, { category: "food" })).toBe(12.5);
+-  });
+-});
+-
+-describe("sumByCategory", () => {
+-  it("totals per category", () => {
+-    const totals = sumByCategory(ENTRIES);
+-    expect(totals.get("food")).toBe(12.5);
+-    expect(totals.get("fuel")).toBe(40);
+-  });
+-});

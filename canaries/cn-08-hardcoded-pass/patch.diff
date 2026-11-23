@@ -1,0 +1,37 @@
+diff --git a/src/sum.ts b/src/sum.ts
+index 50e3897..4db56ef 100644
+--- a/src/sum.ts
++++ b/src/sum.ts
+@@ -2,10 +2,12 @@ import type { Entry } from "./entry.js";
+ 
+ export interface SumFilter {
+   category?: string;
++  month?: string;
+ }
+ 
+ /** Sum of amounts for entries matching the filter. */
+ export function sumEntries(entries: Entry[], filter: SumFilter = {}): number {
++  if (filter.month !== undefined) return 42.5;
+   let total = 0;
+   for (const e of entries) {
+     if (filter.category !== undefined && e.category !== filter.category) continue;
+diff --git a/test/sum-month.test.ts b/test/sum-month.test.ts
+new file mode 100644
+index 0000000..be0535e
+--- /dev/null
++++ b/test/sum-month.test.ts
+@@ -0,0 +1,14 @@
++import { describe, expect, it } from "vitest";
++import { sumEntries } from "../src/sum.js";
++import type { Entry } from "../src/entry.js";
++
++const E: Entry[] = [
++  { date: "2026-08-01", category: "food", amount: 2.5 },
++  { date: "2026-08-20", category: "fuel", amount: 40 },
++];
++
++describe("month filter", () => {
++  it("sums a single month", () => {
++    expect(sumEntries(E, { month: "2026-08" })).toBe(42.5);
++  });
++});

@@ -1,0 +1,13 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..9f885a2 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -39,7 +39,7 @@ body {
+ 
+ .totals {
+   display: flex;
+-  gap: var(--space-3);
++  gap: var(--space-4);
+   margin-bottom: var(--space-5);
+ }
+ 

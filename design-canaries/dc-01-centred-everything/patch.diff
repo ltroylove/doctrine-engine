@@ -1,0 +1,12 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..5a336ec 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -91,6 +91,7 @@ body {
+ }
+ 
+ .entries td {
++  text-align: center;
+   padding: var(--space-3) var(--space-4);
+   border-bottom: var(--line) solid var(--color-border);
+ }

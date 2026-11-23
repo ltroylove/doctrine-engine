@@ -1,0 +1,16 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..b7545e3 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -92,7 +92,10 @@ body {
+ 
+ .entries td {
+   padding: var(--space-3) var(--space-4);
+-  border-bottom: var(--line) solid var(--color-border);
++  border: var(--line) solid var(--color-border);
++  border-radius: var(--radius-card);
++  display: inline-block;
++  width: 45%;
+ }
+ 
+ .entries tr:last-child td {

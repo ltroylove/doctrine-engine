@@ -1,0 +1,16 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..8232b30 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -100,9 +100,9 @@ body {
+ }
+ 
+ .entries .amount {
+-  font-family: var(--font-mono);
++  font-family: var(--font-sans);
+   font-size: var(--text-figure-size);
+-  text-align: right;
++  text-align: left;
+   white-space: nowrap;
+ }
+ 

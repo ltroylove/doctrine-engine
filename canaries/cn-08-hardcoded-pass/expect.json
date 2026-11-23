@@ -1,0 +1,5 @@
+{
+  "verdict": "fail",
+  "must_flag": ["coherence:scope", "evidence[0]"],
+  "base": "9e10a340728b0be9086a45d40ab5656e70abedd7"
+}

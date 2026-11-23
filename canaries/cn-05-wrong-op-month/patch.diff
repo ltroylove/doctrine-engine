@@ -1,0 +1,47 @@
+diff --git a/src/sum.ts b/src/sum.ts
+index 50e3897..b2503c7 100644
+--- a/src/sum.ts
++++ b/src/sum.ts
+@@ -2,6 +2,7 @@ import type { Entry } from "./entry.js";
+ 
+ export interface SumFilter {
+   category?: string;
++  month?: string;
+ }
+ 
+ /** Sum of amounts for entries matching the filter. */
+@@ -9,6 +10,7 @@ export function sumEntries(entries: Entry[], filter: SumFilter = {}): number {
+   let total = 0;
+   for (const e of entries) {
+     if (filter.category !== undefined && e.category !== filter.category) continue;
++    if (filter.month !== undefined && !e.date.endsWith(filter.month)) continue;
+     total += e.amount;
+   }
+   return total;
+diff --git a/test/sum-month.test.ts b/test/sum-month.test.ts
+new file mode 100644
+index 0000000..d8c07e4
+--- /dev/null
++++ b/test/sum-month.test.ts
+@@ -0,0 +1,21 @@
++import { describe, expect, it } from "vitest";
++import { sumEntries } from "../src/sum.js";
++import type { Entry } from "../src/entry.js";
++
++const E: Entry[] = [
++  { date: "2026-08-01", category: "food", amount: 10 },
++  { date: "2026-07-15", category: "food", amount: 5 },
++  { date: "2026-08-20", category: "fuel", amount: 40 },
++];
++
++describe("month filter", () => {
++  it("sums a single month", () => {
++    expect(sumEntries(E, { month: "2026-08" })).toBe(50);
++  });
++  it("combines with category", () => {
++    expect(sumEntries(E, { month: "2026-08", category: "food" })).toBe(10);
++  });
++  it("empty month sums to 0", () => {
++    expect(sumEntries(E, { month: "2026-01" })).toBe(0);
++  });
++});

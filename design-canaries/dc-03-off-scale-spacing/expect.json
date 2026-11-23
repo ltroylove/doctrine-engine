@@ -1,0 +1,11 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "spacing-off-scale",
+    "off-scale",
+    "off scale",
+    "spacing-inconsistent"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "Card padding moved off the space scale by a few pixels via a calc, so the gate's literal rule does not fire and the three cards no longer share an inset with the table."
+}

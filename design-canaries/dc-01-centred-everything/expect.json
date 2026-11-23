@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "centred",
+    "centered"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "Body text and table content centred because it looked balanced. Every value is on-token; nothing lines up down the column."
+}

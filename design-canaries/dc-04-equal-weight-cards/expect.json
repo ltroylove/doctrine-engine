@@ -1,0 +1,10 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "equal-weight",
+    "wall-of-equal",
+    "equal weight"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "The entry table is restyled as a wall of identical rounded cards, so no row is more important than any other and the columns stop aligning."
+}

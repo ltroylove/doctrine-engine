@@ -1,0 +1,13 @@
+diff --git a/src/web/public/css/app.css b/src/web/public/css/app.css
+index ebd1a1f..8506393 100644
+--- a/src/web/public/css/app.css
++++ b/src/web/public/css/app.css
+@@ -48,7 +48,7 @@ body {
+   background: var(--color-surface);
+   border: var(--line) solid var(--color-border);
+   border-radius: var(--radius-card);
+-  padding: var(--space-4);
++  padding: calc(var(--space-4) + var(--space-1) / 2) calc(var(--space-4) - var(--space-1));
+ }
+ 
+ .total-label {

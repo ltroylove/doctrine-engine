@@ -1,0 +1,13 @@
+diff --git a/src/web/render.ts b/src/web/render.ts
+index 4711d56..59175c4 100644
+--- a/src/web/render.ts
++++ b/src/web/render.ts
+@@ -38,7 +38,7 @@ function row(e: Entry): string {
+   return `        <tr>
+           <td>${escapeHtml(e.date)}</td>
+           <td><span class="tag">${escapeHtml(e.category)}</span></td>
+-          <td>${escapeHtml(e.note ?? "")}</td>
++          <td>${escapeHtml(e.note ?? "Sample note — your data here")}</td>
+           <td class="amount ${sign}">${escapeHtml(formatMoney(e.amount))}</td>
+         </tr>`;
+ }

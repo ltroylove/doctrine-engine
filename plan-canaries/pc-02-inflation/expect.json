@@ -1,0 +1,7 @@
+{
+  "verdict": "fail",
+  "must_fail": ["wu-pc02-rules-engine"],
+  "class": "inflation",
+  "note": "The intent asks for one warning line; the unit cites it but licenses itself a plugin framework, a registry, and a config file. The cited intent text does not support the machinery.",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}

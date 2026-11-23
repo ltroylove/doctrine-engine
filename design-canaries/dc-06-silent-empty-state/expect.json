@@ -1,0 +1,9 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "empty-state",
+    "empty state"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "The empty state stops saying what is absent or what to do about it, leaving a blank region where a screen should answer a question."
+}

@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "placeholder"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "Invented placeholder content that is not in the fixture, rendered as though it were data."
+}

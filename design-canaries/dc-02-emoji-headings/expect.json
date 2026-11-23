@@ -1,0 +1,8 @@
+{
+  "verdict": "fail",
+  "must_flag": [
+    "emoji"
+  ],
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "Emoji used as section markers in the totals labels — decorative, untranslatable, and not in the contract."
+}

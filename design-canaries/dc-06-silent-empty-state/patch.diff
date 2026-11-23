@@ -1,0 +1,13 @@
+diff --git a/src/web/render.ts b/src/web/render.ts
+index 4711d56..3bb3534 100644
+--- a/src/web/render.ts
++++ b/src/web/render.ts
+@@ -46,7 +46,7 @@ function row(e: Entry): string {
+ export function renderLedgerPage(entries: readonly Entry[], period: string): string {
+   const t = totalsOf(entries);
+   const body = entries.length === 0
+-    ? `      <p class="empty">No entries in this period.</p>`
++    ? `      <p class="empty"></p>`
+     : `      <table class="entries">
+         <thead>
+           <tr><th>Date</th><th>Category</th><th>Note</th><th class="amount">Amount</th></tr>

@@ -1,0 +1,37 @@
+diff --git a/src/cli.ts b/src/cli.ts
+index 3a146c0..b18cf89 100644
+--- a/src/cli.ts
++++ b/src/cli.ts
+@@ -6,7 +6,6 @@ const STORE = process.env["LEDGER_PATH"] ?? "ledger.jsonl";
+ 
+ export function cmdAdd(args: string[]): string {
+   const [date, category, amountRaw, ...noteParts] = args;
+-  console.debug("add args:", args);
+   const entry = parseEntry({
+     date,
+     category,
+@@ -27,7 +26,6 @@ export function cmdList(): string {
+ export function cmdSum(args: string[]): string {
+   const category = args[0];
+   const entries = loadEntries(STORE);
+-  console.debug("sum over", entries.length, "entries");
+   if (category !== undefined) {
+     const total = sumEntries(entries, { category });
+     return `${category}: $${total.toFixed(2)}`;
+diff --git a/src/store.ts b/src/store.ts
+index f186dd4..bf0bbc4 100644
+--- a/src/store.ts
++++ b/src/store.ts
+@@ -10,7 +10,11 @@ export function loadEntries(path: string): Entry[] {
+   const out: Entry[] = [];
+   for (const line of readFileSync(path, "utf8").split(/\r?\n/)) {
+     if (line.trim().length === 0) continue;
+-    out.push(parseEntry(JSON.parse(line)));
++    try {
++      out.push(parseEntry(JSON.parse(line)));
++    } catch {
++      // skip bad lines
++    }
+   }
+   return out;
+ }

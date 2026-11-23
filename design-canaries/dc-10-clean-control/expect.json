@@ -1,0 +1,5 @@
+{
+  "verdict": "pass",
+  "base": "17b8fee60f85078bd8a601850bd44cbdf70904c8",
+  "why": "A genuine improvement that breaks nothing: the totals row gains the same gap the scale already uses elsewhere. A judge that fails this is not measuring design, it is measuring change."
+}

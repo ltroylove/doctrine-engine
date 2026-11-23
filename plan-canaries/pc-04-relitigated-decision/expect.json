@@ -1,0 +1,7 @@
+{
+  "verdict": "fail",
+  "must_fail": ["wu-pc04-format"],
+  "class": "relitigated-decision",
+  "note": "context/decisions.md records that category filtering matches case-insensitively (landed unit, judged and merged). The unit smuggles a reversal of that decision inside a presentation-only intent.",
+  "base": "c1d620644e9c6b0e94bc5ffc750124d6baf6f5b3"
+}
